@@ -38,6 +38,19 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'addPlayer',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/add-player/add-player.module')
+              .then(m => m.AddPlayerPageModule)
+
+              //loadChildren: '../pages/add-player/add-player.module#AppPlayerPageModule'
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
