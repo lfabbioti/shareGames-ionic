@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Player } from '../../model/player';
 
 @Component({
   selector: 'app-add-player',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddPlayerPage implements OnInit {
 
+  protected player: Player = new Player;
   constructor() { }
 
   ngOnInit() {
