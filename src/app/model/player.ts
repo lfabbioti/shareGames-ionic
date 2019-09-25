@@ -1,8 +1,8 @@
 export class Player {
     id:string;
-    nome: string;
-    nickname: string;
+    nome:string;
+    nickname:string;
     email:string;
-    pws: string;
-    ativo: boolean = true;
+    pws:string;
+    ativo:boolean = true;
 }
