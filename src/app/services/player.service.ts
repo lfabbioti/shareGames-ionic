@@ -3,6 +3,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Player } from '../model/player';
 import { map } from 'rxjs/operators';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -23,17 +24,16 @@ export class PlayerService {
       });
   }
 
-  getAll() {
+  gelAll() {
     return this.fire.collection("players").snapshotChanges()
       .pipe(
         map(dados =>
           dados.map(d => ({ key: d.payload.doc.id, ...d.payload.doc.data() }))
         )
-
       )
   }
 
-get(id){
-  return this.fire.collection("players").doc<Player>(id).valueChanges();
+  get(id){
+    return this.fire.collection("players").doc<Player>(id).valueChanges();
   }
 }
