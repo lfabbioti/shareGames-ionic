@@ -28,12 +28,32 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'listGamer',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/list-gamer/list-gamer.module').then(m => m.ListGamerPageModule)
+          }
+        ]
+      },
+      {
         path: 'perfilPlayer/:id',
         children: [
           {
             path: '',
             loadChildren: () =>
               import('../pages/perfil-player/perfil-player.module').then(m => m.PerfilPlayerPageModule)
+          }
+        ]
+      },
+      {
+        path: 'perfilGamer/:id',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/perfil-gamer/perfil-gamer.module').then(m => m.PerfilGamerPageModule)
           }
         ]
       },
