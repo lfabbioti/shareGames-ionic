@@ -58,6 +58,17 @@ const routes: Routes = [
           }
         ]
       },
+      {
+        path: 'addGamer',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../pages/add-gamer/add-gamer.module').then(m => m.AddGamerPageModule)
+            
+            //loadChildren: '../pages/add-player/add-player.module#AddPlayerPageModule'
+          }
+        ]
+      },
       
       {
         path: '',
