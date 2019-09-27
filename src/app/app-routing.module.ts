@@ -9,9 +9,9 @@ const routes: Routes = [
   { path: 'list-player', loadChildren: './pages/list-player/list-player.module#ListPlayerPageModule' },
   { path: 'perfil-player', loadChildren: './pages/perfil-player/perfil-player.module#PerfilPlayerPageModule' },
   { path: 'add-gamer', loadChildren: './pages/add-gamer/add-gamer.module#AddGamerPageModule' },
-  { path: 'list-gamer', loadChildren: '.pages/list-gamer/list-gamer.module#ListGamerPageModule' },
-  { path: 'list-gamer', loadChildren: '.pages/list-gamer/list-gamer.module#ListGamerPageModule' },
-  { path: 'perfil-gamer', loadChildren: '.pages/perfil-gamer/perfil-gamer.module#PerfilGamerPageModule' },
+  { path: 'list-gamer', loadChildren: './pages/list-gamer/list-gamer.module#ListGamerPageModule' },
+  { path: 'list-gamer', loadChildren: './pages/list-gamer/list-gamer.module#ListGamerPageModule' },
+  { path: 'perfil-gamer', loadChildren: './pages/perfil-gamer/perfil-gamer.module#PerfilGamerPageModule' },
   // { path: 'add-player', loadChildren: './pages/add-player/add-player.module#AddPlayerPageModule' }
 ];
 @NgModule({
