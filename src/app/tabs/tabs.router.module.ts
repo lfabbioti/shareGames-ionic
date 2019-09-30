@@ -79,6 +79,16 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'addPlayer/:id',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../pages/add-player/add-player.module').then(m => m.AddPlayerPageModule)
+            
+          }
+        ]
+      },
+      {
         path: 'addGamer',
         children: [
           {

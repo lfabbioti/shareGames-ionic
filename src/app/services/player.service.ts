@@ -33,7 +33,17 @@ export class PlayerService {
       )
   }
 
-  get(id){
+  get(id) {
     return this.fire.collection("players").doc<Player>(id).valueChanges();
+  }
+
+  update(player, id) {
+    return this.fire.collection("players").doc<Player>(id)
+      .update(player);
+  }
+
+  remove(player) {
+    return this.fire.collection("players").doc(player.key).delete();
+
   }
 }
