@@ -37,9 +37,10 @@ export class AddPlayerPage implements OnInit {
   }
 
   onsubmit(form) {
-    if (!this.preview) {
-      this.presentAlert("Erro", "Deve inserir uma foto do perfil!")
-    } else
+    if (!this.preview){
+      this.presentAlert("Erro","Deve inserir uma foto do perfil!");
+    } else{
+    this.player.foto = this.preview;
     if (!this.id) {
       this.playerService.save(this.player).then(
         res => {
@@ -69,6 +70,7 @@ export class AddPlayerPage implements OnInit {
       )
     }
   }
+}
 
   tirarFoto() {
     const options: CameraOptions = {
