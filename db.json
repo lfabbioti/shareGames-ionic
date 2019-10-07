@@ -71,6 +71,24 @@
       "email": "bbb",
       "pws": "111111",
       "id": 4
+    },
+    {
+      "endereco": {
+        "erro": false,
+        "cep": "23520-100",
+        "logradouro": "Rua Antônio Pinto Menezes",
+        "bairro": "Santa Cruz",
+        "localidade": "Rio de Janeiro",
+        "uf": "RJ",
+        "unidade": "",
+        "gia": "",
+        "ibge": "3304557",
+        "complemento": ""
+      },
+      "nome": "bbbb",
+      "email": "bbb",
+      "pws": "111111",
+      "id": 4
     }
   ],
   "produtos": [
