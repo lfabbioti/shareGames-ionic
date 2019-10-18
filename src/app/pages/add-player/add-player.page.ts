@@ -11,7 +11,9 @@ import {
   GoogleMap,
   GoogleMapsEvent,
   Marker,
-  MarkerCluster
+  MarkerCluster,
+  MyLocation,
+  LocationService
 } from '@ionic-native/google-maps';
 
 @Component({
@@ -137,7 +139,7 @@ export class AddPlayerPage implements OnInit {
     });
     await alert.present();
   }
-
+  //Google Maps
   loadMap() {
     this.map = GoogleMaps.create('map_canvas', {
       'camera': {
@@ -149,6 +151,17 @@ export class AddPlayerPage implements OnInit {
       }
     });
     //this.addCluster(this.dummyData());
+    this.minhaLocalizacao()
   }
-
+  minhaLocalizacao() {
+    LocationService.getMyLocation().then(
+      (myLocation: MyLocation) => {
+        this.map.setOptions({
+          camera: {
+            target: myLocation.latLng
+          }
+        })
+      }
+    )
+  }
 }
