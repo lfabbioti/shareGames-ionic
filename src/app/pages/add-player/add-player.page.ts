@@ -177,7 +177,17 @@ export class AddPlayerPage implements OnInit {
             marker.setTitle(this.player.nome)
             marker.setSnippet(this.player.nickname)
             marker.showInfoWindow()
-
+          }
+        )
+        //colocar pontos extras
+        this.map.on(GoogleMapsEvent.MAP_CLICK).subscribe(
+          res => {
+            this.map.addMarker({
+              position: {
+                lat: res.position.lat,
+                lng: res.position.lng
+              }
+            })
           }
         )
       }
