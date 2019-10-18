@@ -161,6 +161,12 @@ export class AddPlayerPage implements OnInit {
             target: myLocation.latLng
           }
         })
+        this.map.addMarker({
+          position: {
+            lat: myLocation.latLng.lat,
+            lng: myLocation.latLng.lng
+          }
+        })
       }
     )
   }
