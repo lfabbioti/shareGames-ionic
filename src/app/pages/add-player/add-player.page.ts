@@ -161,12 +161,25 @@ export class AddPlayerPage implements OnInit {
             target: myLocation.latLng
           }
         })
-        this.map.addMarker({
+        //Adicionar marcador no mapa
+        let marker: Marker = this.map.addMarkerSync({
           position: {
             lat: myLocation.latLng.lat,
             lng: myLocation.latLng.lng
-          }
+          },
+          icon: "#00ff00",
+          title: "Titulo",
+          snippet: "Comentario"
         })
+        //adicionar eventos no mapa!
+        marker.on(GoogleMapsEvent.MARKER_CLICK).subscribe(
+          res => {
+            marker.setTitle(this.player.nome)
+            marker.setSnippet(this.player.nickname)
+            marker.showInfoWindow()
+
+          }
+        )
       }
     )
   }
